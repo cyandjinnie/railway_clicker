@@ -1,4 +1,4 @@
-from Singleton import Singleton
+from Lib.Singleton import Singleton
 from Scenes.LoadingScene import LoadingScene
 from Scene import Scene
 import pygame

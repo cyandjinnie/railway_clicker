@@ -1,7 +1,7 @@
 from Renderer import Renderer
 from Director import Director
 from time import time
-from Scenes.MainScene import MainScene
+from Scenes.MainGameScene import MainGameScene
 import pygame
 
 
@@ -26,7 +26,7 @@ class Application:
 
     def run(self):
         director = Director()
-        Director().set_scene(MainScene())
+        Director().set_scene(MainGameScene())
         previous_time = time()
         deltaT = time()
         while not self.__gameover:

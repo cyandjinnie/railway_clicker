@@ -1,12 +1,14 @@
 from abc import ABC
 from abc import abstractmethod
-
+from Entity import Entity
+from pygame import Surface
 import pygame
+
 
 # TODO:
 class Scene(ABC):
     def __init__(self):
-        self.__scene_graph = []
+        super().__init__()
 
     @abstractmethod
     def update(self, delta_time: float):

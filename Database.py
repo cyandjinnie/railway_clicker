@@ -1,4 +1,4 @@
-from Singleton import Singleton
+from Lib.Singleton import Singleton
 
 class Database(metaclass=Singleton):
     def __init__(self):

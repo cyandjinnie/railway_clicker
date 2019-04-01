@@ -1,4 +1,5 @@
 from Scene import Scene
+import pygame
 
 
 class LoadingScene(Scene):
@@ -6,9 +7,9 @@ class LoadingScene(Scene):
         pass
         # Paste initial scene here
 
-    def render(self, screen):
+    def render(self, screen: pygame.Surface):
         screen.fill((100, 100, 100))
         # print('rendering')
 
-    def update(self):
+    def update(self, delta_time):
         pass
