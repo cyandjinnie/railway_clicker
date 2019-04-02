@@ -8,6 +8,7 @@ from Classes.TextLabel import TextLabel
 from Classes.Vehicle import Vehicle
 from Classes.Button import Button
 from Scenes.ShopScene import ShopScene
+import os
 
 class MainGameScene(Scene):
     def __init__(self):
@@ -18,7 +19,7 @@ class MainGameScene(Scene):
         super(MainGameScene, self).__init__()
         self.background = Background((0, 123, 228))
         self.rails = MovingRail()
-        self.label = TextLabel("Points: {}".format(self.db['points']), "Resources/F77-Minecraft.ttf", 16, (50, 18))
+        self.label = TextLabel("Points: {}".format(self.db['points']), os.path.join("Resources", Database()['font']), 16, (50, 18))
         self.train = Vehicle()
         self.train_rect = self.train.get_rect()
         self.button = Button(60, 200, 32, "Shop", (100, 100))

@@ -1,13 +1,14 @@
 from Entity import Entity
 from Database import Database
 import pygame
+import os
 
 
 class MovingRail(Entity):
     def __init__(self):
         super().__init__()
         db = Database()
-        self.rail_img = rails_img = pygame.image.load("Resources/ClickerBg.png")
+        self.rail_img = rails_img = pygame.image.load(os.path.join("Resources", db['rails_img']))
         width, height = self.get_scaling_vector()
         self.rail_img = pygame.transform.scale(self.rail_img, (width, height))
         self.rect = self.rail_img.get_rect()
