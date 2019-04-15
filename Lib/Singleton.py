@@ -1,5 +1,3 @@
-from abc import ABC
-
 class Singleton(type):
     _instances = {}
 
@@ -7,4 +5,3 @@ class Singleton(type):
         if cls not in cls._instances:
             cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
         return cls._instances[cls]
-

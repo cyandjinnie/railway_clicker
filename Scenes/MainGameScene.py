@@ -10,6 +10,7 @@ from Classes.Button import Button
 from Scenes.ShopScene import ShopScene
 import os
 
+
 class MainGameScene(Scene):
     def __init__(self):
         self.db = Database()

@@ -1,5 +1,6 @@
 from Lib.Singleton import Singleton
 
+
 class Database(metaclass=Singleton):
     def __init__(self):
         self.__dct = dict()

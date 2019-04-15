@@ -5,13 +5,13 @@ import pygame
 
 class Director(metaclass=Singleton):
     def __init__(self):
-        self.__scene_stack = [LoadingScene()]
-        self.__scene_counter = 1
+        self.__scene_stack = []
+        self.__scene_counter = 0
+        self.set_scene(LoadingScene())
 
     def set_scene(self, scene: Scene):
         self.__scene_counter += 1
         self.__scene_stack.append(scene)
-        #print("ADDED SCENE (STACK DEPTH {})".format(self.__scene_counter))
 
     def pop_scene(self):
         if self.__scene_counter > 1:

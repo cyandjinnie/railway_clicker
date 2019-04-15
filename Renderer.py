@@ -8,8 +8,6 @@ class Renderer:
         self.__surface.fill((0, 0, 0))
         pygame.display.set_caption(name)
 
-    # TODO:
     def draw(self, scene: Scene):
         scene.render(self.__surface)
         pygame.display.flip()
-        #scene.draw()

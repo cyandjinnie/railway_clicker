@@ -3,6 +3,7 @@ from Director import Director
 from time import time
 from Scenes.MainGameScene import MainGameScene
 import pygame
+import sys
 
 
 class Application:
@@ -10,6 +11,7 @@ class Application:
         pygame.init()
         self.__title = name
         self.__gameover = False
+        self.__renderer = None
 
     def create_window(self, width: int, height: int, name="default"):
         self.__renderer = Renderer(width, height, name)
@@ -25,14 +27,18 @@ class Application:
                 Director().get_current_scene().handle_event(event)
 
     def run(self):
+        if self.__renderer is None:
+            print("[Fatal Error] No screen initialized")
+            sys.exit(1)
+
         director = Director()
         Director().set_scene(MainGameScene())
         previous_time = time()
-        deltaT = time()
+        delta_t = time()
         while not self.__gameover:
-            deltaT = (time() - previous_time)
+            delta_t = (time() - previous_time)
             scene = director.get_current_scene()
-            scene.update(deltaT)
+            scene.update(delta_t)
             self.handle_events()
             self.__renderer.draw(scene)
             previous_time = time()

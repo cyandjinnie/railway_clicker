@@ -4,7 +4,7 @@ import pygame
 
 class LoadingScene(Scene):
     def __init__(self):
-        pass
+        super().__init__()
 
     def render(self, screen: pygame.Surface):
         screen.fill((100, 100, 100))

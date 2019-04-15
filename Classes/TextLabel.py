@@ -4,6 +4,7 @@ from Entity import Entity
 
 class TextLabel(Entity):
     def __init__(self, text, font_path, font_size, coordinate):
+        super().__init__()
         self.font = pygame.font.Font(font_path, font_size)
         self.label = self.font.render(text, 1, (255, 255, 255))
         self.rect = self.label.get_rect()

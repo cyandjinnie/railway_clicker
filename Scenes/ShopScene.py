@@ -3,23 +3,22 @@ from Database import Database
 from Director import Director
 import pygame
 from Classes.Background import Background
-from Classes.MovingRail import MovingRail
 from Classes.TextLabel import TextLabel
-from Classes.Vehicle import Vehicle
 from Classes.Button import Button
+
 
 class ShopScene(Scene):
     def __init__(self):
         self.db = Database()
         super().__init__()
         self.background = Background((0, 123, 228))
-        self.button = Button(60, 200, 32, "Shop", (100, 100), color=(180, 190, 45))
+        self.button = Button(60, 200, 32, "Shop", (100, 100), color=(144, 191, 51))
         self.button_rect = self.button.get_rect()
         self.label = TextLabel("Points: {}".format(self.db['points']), "Resources/F77-Minecraft.ttf", 16, (50, 18))
-        self.ten_km_up = Button(60, 350, 24, "+10km/h (50 pts)", (200, 370), color=(180, 190, 45))
-        self.hundred_km_up = Button(60, 350, 24, "+100km/h (300 pts)", (200, 280), color=(180, 190, 45))
-        self.five_hundred_km_up = Button(60, 350, 24, "+500km/h (1000 pts)", (200, 190), color=(180, 190, 45))
-        self.double_click_points = Button(60, 350, 24, "2X pts. (200 pts)", (600, 370), color=(180, 190, 45))
+        self.ten_km_up = Button(60, 350, 24, "+10km/h (50 pts)", (200, 370), color=(144, 191, 51))
+        self.hundred_km_up = Button(60, 350, 24, "+100km/h (300 pts)", (200, 280), color=(144, 191, 51))
+        self.five_hundred_km_up = Button(60, 350, 24, "+500km/h (1000 pts)", (200, 190), color=(144, 191, 51))
+        self.double_click_points = Button(60, 350, 24, "2X pts. (200 pts)", (600, 370), color=(144, 191, 51))
 
     def render(self, screen: pygame.Surface):
         self.background.render(screen)
